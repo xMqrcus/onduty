@@ -5,14 +5,15 @@ PMserver = Tunnel.getInterface("xMqrcus_onduty","xMqrcus_onduty")
 vRPserver = Tunnel.getInterface("vRP","xMqrcus_onduty")
 vRP = Proxy.getInterface("vRP", "xMqrcus_onduty")
 
-local once = false
+local once = true
 
 Citizen.CreateThread(function()
 	while true do
 	  Citizen.Wait(10000)
 	  if once == true then
 		  once = false
-		  TriggerServerEvent("xmq:jobafpå")
+		  TriggerServerEvent("xmq:checkjob")
+      print("pik")
 	  else
 		once = false
 	  end
@@ -27,6 +28,7 @@ AddEventHandler("onduty", function()
   exports["rp-radio"]:GivePlayerAccessToFrequencies(3)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(4)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(5)
+  print("hejsa")
 end)
     
 RegisterNetEvent("offduty")

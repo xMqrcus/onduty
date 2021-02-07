@@ -46,6 +46,5 @@ AddEventHandler("xmq:checkjob", function()
 	local user_id = vRP.getUserId({source})
 	if vRP.hasGroup({user_id,"Politi-Job"}) then
 		TriggerClientEvent("onduty", source)
-		print("dillertjavs")
 	end
 end)

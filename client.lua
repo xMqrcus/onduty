@@ -13,7 +13,6 @@ Citizen.CreateThread(function()
 	  if once == true then
 		  once = false
 		  TriggerServerEvent("xmq:checkjob")
-      print("pik")
 	  else
 		once = false
 	  end
@@ -28,7 +27,6 @@ AddEventHandler("onduty", function()
   exports["rp-radio"]:GivePlayerAccessToFrequencies(3)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(4)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(5)
-  print("hejsa")
 end)
     
 RegisterNetEvent("offduty")

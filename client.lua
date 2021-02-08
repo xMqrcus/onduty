@@ -6,15 +6,20 @@ vRPserver = Tunnel.getInterface("vRP","xMqrcus_onduty")
 vRP = Proxy.getInterface("vRP", "xMqrcus_onduty")
 
 local once = true
+local twice = true
 
 Citizen.CreateThread(function()
 	while true do
-	  Citizen.Wait(10000)
+	  Citizen.Wait(15000)
 	  if once == true then
 		  once = false
 		  TriggerServerEvent("xmq:checkjob")
-	  else
-		once = false
+    elseif once == false then
+      if twice == true then
+        twice = false
+        TriggerServerEvent("xmq:checkjob")
+        TriggerEvent("pNotify:SendNotification",{text = "Du har modtaget adgang til radioerne.",type = "success",timeout = (5000),layout = "BottomCenter",queue = "global",animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
+      end
 	  end
 	end
 end)

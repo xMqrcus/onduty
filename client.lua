@@ -18,30 +18,45 @@ Citizen.CreateThread(function()
       if twice == true then
         twice = false
         TriggerServerEvent("xmq:checkjob")
-        TriggerEvent("pNotify:SendNotification",{text = "Du har modtaget adgang til radioerne.",type = "success",timeout = (5000),layout = "BottomCenter",queue = "global",animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
+        TriggerEvent("pNotify:SendNotification",{text = "Du har modtaget adgang til radioerne",type = "success",timeout = (5000),layout = "BottomCenter",queue = "global",animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
       end
 	  end
 	end
 end)
 
-
-RegisterNetEvent("onduty")
-AddEventHandler("onduty", function()
+RegisterNetEvent("ondutypoliti")
+AddEventHandler("ondutypoliti", function()
   exports["rp-radio"]:GivePlayerAccessToFrequencies(1)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(2)
   exports["rp-radio"]:GivePlayerAccessToFrequencies(3)
+end)
+
+RegisterNetEvent("ondutyems")
+AddEventHandler("ondutyems", function()
   exports["rp-radio"]:GivePlayerAccessToFrequencies(4)
+end)
+
+RegisterNetEvent("ondutymekaniker")
+AddEventHandler("ondutymekaniker", function()
   exports["rp-radio"]:GivePlayerAccessToFrequencies(5)
 end)
-    
-RegisterNetEvent("offduty")
-AddEventHandler("offduty", function()
+
+RegisterNetEvent("offdutypoliti")
+AddEventHandler("offdutypoliti", function()
   exports["rp-radio"]:RemovePlayerAccessToFrequencies(1)
   exports["rp-radio"]:RemovePlayerAccessToFrequencies(2)
   exports["rp-radio"]:RemovePlayerAccessToFrequencies(3)
+end)
+
+RegisterNetEvent("offdutyems")
+AddEventHandler("offdutyems", function()
   exports["rp-radio"]:RemovePlayerAccessToFrequencies(4)
+
+end)
+
+RegisterNetEvent("offdutymekaniker")
+AddEventHandler("offdutymekaniker", function()
   exports["rp-radio"]:RemovePlayerAccessToFrequencies(5)
-	TriggerEvent("pNotify:SendNotification",{text = "Du har taget fri fra arbejde.",type = "success",timeout = (5000),layout = "BottomCenter",queue = "global",animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
 end)
 
 function DrawText3Ds(x,y,z, text)

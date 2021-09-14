@@ -11,3 +11,6 @@ Jeg opdatere det senerehen så det kører over database og ikke et rank.
 
 Meget simpelt, og lavet hurtigt.
 Burde ikke indeholde bugs, men hvis der gør yder jeg ingen support, så I er på egen hånd!
+
+
+### Noget gammelt bras jeg lavede tilbage i december, da jeg først prøvede at lave scripts. Udkommer muligvis en nyere og meget federe version.
